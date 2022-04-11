@@ -1,0 +1,121 @@
+/* ------------------------- Dark Mode ------------------------- */
+QPushButton {
+    border:none;
+    background:transparent;
+    padding:10px;
+}
+/* QTabBar{
+
+} */
+/* Button Text on Hover */
+QToolTip { 
+    background-color: #ffffff; 
+    color: black; 
+    border: #000000 solid 1px
+} 
+
+/* Inactive Tab Settings */
+/* QTabBar::tab{
+    background: #f1f1f1;
+    border-top: 1px solid #ffffff;
+    padding: 5px 5px 3px 5px;
+    color: rgb(153, 153, 153);
+    font-size: auto;
+}  */
+/* General Tab Settings */
+/* QTabBar::tab:first-child{
+    border-left: 1px solid #f1f1f1;
+    border-right: 1px solid #f1f1f1;
+}  */
+/* Selected Active Tab Settings */
+/* QTabBar::tab::selected{
+    background: #ffffff;
+    color: #ddd;
+} */
+/* Tab Space Above Tool Bar */
+/* QTabBar {
+    background: #202020;
+    border:none;
+    border-bottom: 2px solid #3b3b3b;
+} */
+/* Tool Bar Settings */
+/* QToolBar {
+    background: #3b3b3b;
+    border:none;
+    border-bottom: 2px solid #3b3b3b;
+} */
+/* URL Bar Settings */
+/* QLineEdit {
+    background: #f1f1f1;
+    border: 3px solid #202020;
+    border-radius: 4px;
+    color: #000;
+} */
+/* URL Bar Hover Settings */
+/* QLineEdit:hover {
+    background: #ffffff;
+    border: 1px solid rgb(102, 102, 102);
+    border-radius: 4px;
+    color: #ddd;
+} */
+
+/* ------------------------- Dark Mode ------------------------- */
+/* QPushButton {
+    border:none;
+    background:transparent;
+    padding:10px;
+} */
+/* QTabBar{
+
+} */
+/* Button Text on Hover */
+/* QToolTip { 
+    background-color: #ffffff; 
+    color: black; 
+    border: #000000 solid 1px
+}  */
+
+/* Inactive Tab Settings */
+/* QTabBar::tab{
+    background: #202020;
+    border-top: 1px solid #3b3b3b;
+    padding: 5px 5px 3px 5px;
+    color: rgb(153, 153, 153);
+    font-size: auto;
+}  */
+/* General Tab Settings */
+/* QTabBar::tab:first-child{
+    border-left: 1px solid #3b3b3b;
+    border-right: 1px solid #3b3b3b;
+}  */
+/* Selected Active Tab Settings */
+/* QTabBar::tab::selected{
+    background: #3b3b3b;
+    color: #ddd;
+} */
+/* Tab Space Above Tool Bar */
+/* QTabBar {
+    background: #202020;
+    border:none;
+    border-bottom: 2px solid #3b3b3b;
+} */
+/* Tool Bar Settings */
+/* QToolBar {
+    background: #3b3b3b;
+    border:none;
+    border-bottom: 2px solid #3b3b3b;
+} */
+/* URL Bar Settings */
+/* QLineEdit {
+    background: #202020;
+    border: 3px solid #202020;
+    border-radius: 4px;
+    color: #ddd;
+} */
+/* URL Bar Hover Settings */
+/* QLineEdit:hover {
+    background: #202020;
+    border: 1px solid rgb(102, 102, 102);
+    border-radius: 4px;
+    color: #ddd;
+} */

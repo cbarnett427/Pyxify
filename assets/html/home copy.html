@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New Tab</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+	  background: #f1f1f1;
+      max-width: 1024px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Header */
+    .header {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      padding: 16px;
+      font-size: 15px;
+      text-align: center;
+      background: #ffffff;
+      border-radius: 8px;
+      margin: 10px;
+      margin-bottom: 20px;
+      margin-top: 20vh;
+    }
+
+    .title {
+      font-weight: bold;
+      font-style: italic;
+    }
+
+	form input[type="search"] {
+      background-color: #f1f1f1;
+      /* border: 1px solid #242424; */
+	  border-radius: 2em;
+      box-sizing: border-box;
+      font-weight: bold;
+      font: inherit;
+      width: 60%;
+	  height: 44px;
+	  padding-left: 1em;
+      color: inherit;
+      outline: none;
+      border: none;
+    }
+
+
+    /* Float four columns side by side */
+    .column {
+      float: left;
+      width: 25%;
+      padding: 0 10px;
+    }
+
+    /* Remove extra left and right margins, due to padding */
+    /*.row {margin: 0 -5px;}*/
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Responsive columns */
+    @media screen and (max-width: 600px) {
+      .header {
+        display: none;
+      }
+
+      .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 10px;
+        margin-top: 10px;
+      }
+
+      .card_name {
+        display: none;
+      }
+    }
+
+    /* Style the counter cards */
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      padding: 16px;
+      text-align: center;
+      background-color: #ffffff;
+      border-radius: 8px;
+    }
+
+    /* link */
+    a {
+      color: #1a0dab;
+      text-decoration: none;
+    }
+
+    /* mouse over link */
+    a:hover {
+      color: #1a0dab;
+	  text-decoration: underline;
+    }
+
+
+    @media (prefers-color-scheme: dark) {
+	  [data-theme="dark"] form input[type="search"] {
+      background-color: #242424;
+      /* border: 1px solid #242424; */
+	  border-radius: 2em;
+      box-sizing: border-box;
+      font-weight: bold;
+      font: inherit;
+      width: 60%;
+	  height: 44px;
+	  padding-left: 1em;
+      color: inherit;
+      outline: none;
+      border: none;
+    }
+
+      body {
+        color: #FFFFFF;
+        background-color: #242424;
+      }
+
+      .card {
+        background-color: #3b3b3b;
+      }
+
+      /* link */
+      a {
+        color: #8ab4f8;
+      }
+
+      a:hover {
+        color: #8ab4f8;
+		text-decoration: underline;
+      }
+
+      /* Header */
+      .header {
+        background: #3b3b3b;
+      }
+	  /* Header web search */
+      .header .web_search{
+        background: #3b3b3b;
+      }
+    }
+
+	/*Simple css to style it like a toggle switch*/
+	.theme-switch-wrapper {
+	display: flex;
+	align-items: center;
+
+	/* em {
+		margin-left: 10px;
+		font-size: 1rem;
+	} */
+	}
+	.theme-switch {
+	display: inline-block;
+	height: 34px;
+	position: relative;
+	width: 60px;
+	}
+
+	.theme-switch input {
+	display:none;
+	}
+
+	.slider {
+	background-color: #ccc;
+	bottom: 0;
+	cursor: pointer;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	transition: .4s;
+	}
+
+	.slider:before {
+	background-color: #fff;
+	bottom: 4px;
+	content: "";
+	height: 26px;
+	left: 4px;
+	position: absolute;
+	transition: .4s;
+	width: 26px;
+	}
+
+	input:checked + .slider {
+	background-color: #66bb6a;
+	}
+
+	input:checked + .slider:before {
+	transform: translateX(26px);
+	}
+
+	.slider.round {
+	border-radius: 34px;
+	}
+
+	.slider.round:before {
+	border-radius: 50%;
+	}
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    <h2 class="title"><img src="assets\img\google1.png" alt=" Google Search" target="_blank"></h2>
+    <!-- Web search -->
+    <div id="web_search">
+      <form action="https://www.google.com/search?q=" method="GET" autocomplete="off">
+		<input autofocus id="q" name="q" type="search" placeholder="Google Search...">
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <h3 class="card_name">Social Media</h3>
+        <p><a href="https://youtube.com/">YouTube</a></p>
+        <p><a href="https://discord.com/app">Discord</a></p>
+        <p><a href="https://www.reddit.com/">Reddit</a></p>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <h3 class="card_name">Shopping</h3>
+        <p><a href="https://www.bestbuy.com/">Best Buy</a></p>
+		<p><a href="https://www.amazon.com/">Amazon</a></p>
+        <p><a href="https://www.target.com/">Target</a></p>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card" class>
+        <h3 class="card_name">Programming</h3>
+        <p><a href="https://stackoverflow.com/">Stack Overflow</a></p>
+        <p><a href="https://www.programiz.com/">Programiz</a></p>
+		<p><a href="https://github.com/">GitHub</a></p>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+		<h3 class="card_name">Search Engines</h3>
+		<p><a href="https://duckduckgo.com/">DuckDuckGo</a></p>
+        <p><a href="https://google.com/">Google</a></p>
+        <p><a href="https://www.bing.com/">Bing</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="theme-switch-wrapper">
+    <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round"></div>
+  </label>
+  <em>Enable Dark Mode!</em>
+</div>
+</body>
+
+<script>
+const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+    else {
+        document.documentElement.setAttribute('data-theme', 'light');
+    }    
+}
+
+toggleSwitch.addEventListener('change', switchTheme, false);
+
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark'); //add this
+    }
+    else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light'); //add this
+    }    
+}
+
+const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+    }
+}
+</script>
+</html>
