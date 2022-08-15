@@ -13,5 +13,4 @@ This is a Python-based web browser. It contains the following:
 
 
 ## Acknowledgments
-* [Google Fonts](https://fonts.google.com/) - Fonts used
-* [Font Awesome](https://fontawesome.com/?from=io/) - Icons used
+* [PyQt5](https://pypi.org/project/PyQt5/) - Python Library used
