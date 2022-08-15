@@ -1,9 +1,9 @@
 ## Quibble-Web-Browser
 
 This is a Python-based web browser. It contains the following:
-• Landing page
-• New Tab page
-• Easylist adblocker
+- Landing page
+- New Tab page
+- Easylist adblocker
 
 
 ## Created using
