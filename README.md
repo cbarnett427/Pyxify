@@ -7,9 +7,9 @@ This is a Python-based web browser. It contains the following:
 
 
 ## Created using
-• Python
-• HTML
-• CSS
+- Python
+- HTML
+- CSS
 
 
 ## Acknowledgments
