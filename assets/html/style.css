@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100%;
+  background: url('background.jpg');
+  background-size:cover;
+  overflow: hidden;
+}
+
+main {
+  transform: scale(0.9);
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+}
+
+#search-box {
+  padding: 1%;
+  padding-left: 2%;
+  width: 85vh;
+  height: 2vh;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#search-box::placeholder {
+  color: #737373;
+}
+
+input[type="text"] {
+  font-size: 20px;
+  color: #737373;
+}
+
+#time {
+  position: absolute;
+  font-size: 68px;
+  color: white;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 2px;
+  top: 33%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#shortcuts {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 50% 50%;
+  justify-items: center;
+  align-items: center;
+  width: 90vh;
+  height: 35vh;
+  position: absolute;
+  bottom: 1%;
+  left: 50%;
+  -ms-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+}
+
+.shortcut {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20vh;
+  height: 20vh;
+  border-radius: 15px;
+}
+
+.shortcut:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, .1);
+}
+
+.shortcut_square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5%;
+  background: white;
+  margin: 10px;
+  width: 60px;
+  height: 60px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.shortcut_title {
+  color: white;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+  left: 50%;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+.shortcut_square img {
+  width: 34px;
+  height: 34px;
+}

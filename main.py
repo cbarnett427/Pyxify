@@ -42,7 +42,7 @@ class BrowserTab(QMainWindow):
         super(BrowserTab, self).__init__(parent)
         self.mainWindow = Main
         self.browser = BrowserEngineView(self.mainWindow)
-        self.browser.load(QUrl.fromLocalFile(os.path.abspath('home.html')))
+        self.browser.load(QUrl.fromLocalFile(os.path.abspath('assets/html/index.html')))
         self.setCentralWidget(self.browser)
         self.navigation_bar = QToolBar('Navigation')
         self.navigation_bar.setIconSize(QSize(24, 24))
@@ -55,7 +55,7 @@ class BrowserTab(QMainWindow):
         self.stop_button = QAction(QIcon('assets/img/stop.png'), 'Stop', self)
         self.refresh_button = QAction(QIcon('assets/img/refresh.png'), 'Refresh', self)
         self.home_button = QAction(QIcon('assets/img/home.png'), 'Home', self)
-        self.enter_button = QAction(QIcon('assets/img/enter.png'), 'Search', self)
+        self.enter_button = QAction(QIcon('assets/img/search.png'), 'Search', self)
         self.add_button = QAction(QIcon('assets/img/new.png'), 'New Tab', self)
         self.ssl_label1 = QLabel(self)
         self.ssl_label2 = QLabel(self)
@@ -63,7 +63,7 @@ class BrowserTab(QMainWindow):
         self.url_text_bar.setMinimumWidth(300)
         self.progress_bar = QProgressBar()
         self.progress_bar.setMaximumWidth(120)
-        self.set_button = QAction(QIcon('assets/img/setting.png'), 'Settings', self)
+        # self.set_button = QAction(QIcon('assets/img/setting.png'), 'Settings', self)
         self.navigation_bar.addAction(self.back_button)
         self.navigation_bar.addAction(self.next_button)
         # Stop Button
@@ -80,7 +80,7 @@ class BrowserTab(QMainWindow):
         self.navigation_bar.addWidget(self.progress_bar)
         # self.navigation_bar.addSeparator()
         # Settings Button
-        self.navigation_bar.addAction(self.set_button)
+        # self.navigation_bar.addAction(self.set_button)
 
 
     def navigate_to_url(self):
@@ -90,7 +90,7 @@ class BrowserTab(QMainWindow):
         self.browser.load(s)
 
     def navigate_to_home(self):
-        s = QUrl.fromLocalFile(os.path.abspath('home.html'))
+        s = QUrl.fromLocalFile(os.path.abspath('assets/html/index.html'))
         self.browser.load(s)
 
     def renew_urlbar(self, s):
@@ -98,11 +98,11 @@ class BrowserTab(QMainWindow):
         if prec == 'http':
             self.ssl_label1.setPixmap(QPixmap("assets/img/unsafe.png").scaledToHeight(24))
             self.ssl_label2.setText(" Unseccured SSL ")
-            self.ssl_label2.setStyleSheet("color:red;")
+            self.ssl_label2.setStyleSheet("color:#4d4d4d;")
         elif prec == 'https':
             self.ssl_label1.setPixmap(QPixmap("assets/img/safe.png").scaledToHeight(24))
             self.ssl_label2.setText(" Secured SSL ")
-            self.ssl_label2.setStyleSheet("color:green;")
+            self.ssl_label2.setStyleSheet("color:#228be6;")
         self.url_text_bar.setText(s.toString())
         self.url_text_bar.setCursorPosition(0)
 
@@ -111,15 +111,16 @@ class BrowserTab(QMainWindow):
 
 
 class BrowserWindow(QMainWindow):
-    name = "Quibble Web Browser"
-    version = "1.0"
-    date = "03.22.2022"
+    name = "Pixify Web Browser"
+    version = "1.1"
+    date = "08.16.2022"
+
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.setWindowTitle(self.name + " " + self.version)
-        self.setWindowIcon(QIcon('assets/img/terminal-favicon-64x64.png'))
-        self.resize(1200, 900)
+        self.setWindowIcon(QIcon('assets/img/logo.png'))
+        self.resize(1920, 1080)
         self.tabs = QTabWidget()
         # making document mode true
         self.tabs.setDocumentMode(True)
@@ -130,9 +131,10 @@ class BrowserWindow(QMainWindow):
         self.tabs.setTabShape(0)
         self.setCentralWidget(self.tabs)
         self.tabs.tabCloseRequested.connect(self.close_current_tab)
-        self.tabs.currentChanged.connect(lambda i: self.setWindowTitle(self.tabs.tabText(i) + " - " + self.name))
+        self.tabs.currentChanged.connect(lambda i: self.setWindowTitle(self.tabs.tabText(i)))
+        # self.tabs.currentChanged.connect(lambda i: self.setWindowTitle(self.tabs.tabText(i) + " - " + self.name))
         self.init_tab = BrowserTab(self)
-        self.init_tab.browser.load(QUrl.fromLocalFile(os.path.abspath('home.html')))
+        self.init_tab.browser.load(QUrl.fromLocalFile(os.path.abspath('assets/html/index.html')))
         self.add_new_tab(self.init_tab)
 
     def add_blank_tab(self):
@@ -142,7 +144,7 @@ class BrowserWindow(QMainWindow):
     def add_new_tab(self, tab):
         i = self.tabs.addTab(tab, "")
         self.tabs.setCurrentIndex(i)
-        self.tabs.setTabIcon(i,QIcon('assets/img/terminal-favicon-64x64.png'))
+        self.tabs.setTabIcon(i,QIcon('assets/img/logo.png'))
         tab.back_button.triggered.connect(tab.browser.back)
         tab.next_button.triggered.connect(tab.browser.forward)
         tab.stop_button.triggered.connect(tab.browser.stop)
@@ -155,7 +157,8 @@ class BrowserWindow(QMainWindow):
         tab.browser.loadProgress.connect(tab.renew_progress_bar)
         tab.browser.titleChanged.connect(lambda title: (self.tabs.setTabText(i, title),
         self.tabs.setTabToolTip(i, title),
-        self.setWindowTitle(self.tabs.tabText(i) + " - " + self.name)))
+        self.setWindowTitle(self.tabs.tabText(i))))
+        # self.setWindowTitle(self.tabs.tabText(i) + " - " + self.name)))
         # tab.browser.iconChanged.connect(self.tabs.setTabIcon(i, tab.browser.icon()))
 
     # when double clicked is pressed on tabs
@@ -182,6 +185,7 @@ if __name__ == '__main__':
     # interceptor = setUrlRequestInterceptor()
     # QtWebEngineWidgets.QWebEngineProfile.defaultProfile().setUrlRequestInterceptor(interceptor)
     MainWindow = BrowserWindow()
+    MainWindow.setStyleSheet("background-color:#ffffff")
     MainWindow.show()
 
     with open("assets\css\style.css", "r") as style:

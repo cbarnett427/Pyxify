@@ -1,6 +1,6 @@
-## Pyxify Web Browser
+## Quibble-Web-Browser
 
-A Python-based web browser. It contains the following:
+This is a Python-based web browser. It contains the following:
 - Landing page
 - New Tab page
 - Easylist adblocker
@@ -10,7 +10,6 @@ A Python-based web browser. It contains the following:
 - Python
 - HTML
 - CSS
-- JavaScript
 
 
 ## Acknowledgments
